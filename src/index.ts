@@ -13,10 +13,13 @@ async function main() {
     const { stdout: gitConfigString } = await execAsync('git config -l');
     const gitConfig = getGitConfig(gitConfigString);
     const config = getConfig(gitConfig);
+    // get columns from the env if available
+    const envColumns = process.env['COLUMNS'];
+    const columns = envColumns ? parseInt(envColumns) : undefined;
     const context = await getContextForConfig(
         config,
         chalk,
-        terminalSize().columns
+        columns || terminalSize().columns
     );
     await transformContentsStreaming(context, process.stdin, process.stdout);
 }

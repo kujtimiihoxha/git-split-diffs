@@ -10,7 +10,7 @@ export type GitConfig = {
     SYNTAX_HIGHLIGHTING_THEME?: string;
 };
 
-export const DEFAULT_MIN_LINE_WIDTH = 80;
+export const DEFAULT_MIN_LINE_WIDTH = 0;
 export const DEFAULT_THEME_DIRECTORY = path.resolve(
     path.dirname(fileURLToPath(import.meta.url)),
     '..',
