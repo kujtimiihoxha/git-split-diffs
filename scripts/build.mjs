@@ -11,6 +11,7 @@ const commonOptions = {
     banner: { js: '#!/usr/bin/env node' },
     outExtension: { '.js': '.mjs' },
     sourcemap: false,
+    minify: true,
     logLevel: 'info',
 };
 
